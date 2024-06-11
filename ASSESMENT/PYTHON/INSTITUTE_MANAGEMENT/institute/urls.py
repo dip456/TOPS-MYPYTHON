@@ -4,10 +4,14 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    
-    path('',base_page,name='base_page'),
+    #home page
+    path('base/',base_page,name='base_page'),
+    path('',home_page,name='home_page'),
+    path('about/',about_page,name='about_page'),
+    path('contact/',contact_page,name='contact_page'),
     path('login/',login_page,name='login_page'),
     
+    #student urls
     path('dashboard',dashboard_page,name='dashboard_page' ),
     path('add_student/',add_student,name='add_student'),
     path('show_students/',show_students, name='show_students'),

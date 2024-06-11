@@ -1,0 +1,71 @@
+{% extends 'institute/base.html'%}
+{% load static %}
+
+{% block title %}
+
+{% endblock%} | CONTACT
+{% block style%}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 60px 0;
+    }
+    
+    main {
+        margin-top: 30px;
+    }
+    
+    section h2 {
+        margin-top: 30px;
+    }
+    
+    footer {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+    }
+    
+</style>
+
+
+{% endblock%}
+{% block body %}
+<header class="bg-primary text-white text-center py-5">
+    <h1>Contact Us</h1>
+</header>
+<main class="container my-5">
+    
+    <section class="mb-5">
+        <h2>Contact Information</h2>
+        <p><strong>Address:</strong> 123 Education Lane, Knowledge City, Learning State, 12345</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> info@institute.edu</p>
+    </section>
+    <section>
+        <h2>Contact Form</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="Subject">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+</main>
+{% endblock%}

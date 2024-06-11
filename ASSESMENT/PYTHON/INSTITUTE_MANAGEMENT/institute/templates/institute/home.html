@@ -1,0 +1,25 @@
+{% extends 'institute/base.html'%}
+{% load static %}
+
+{% block title%}
+
+{% endblock%} | HOME
+{% block style%}
+
+{% endblock%}
+{% block body %}
+<div class="container-fluid col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{% static 'institute/images/img7.avif' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-6 fw-light lh-1 mb-3">Welcome to <span class="text-success fw-bold">MY INSTITUTE</span> - where learning meets innovation.</h1>
+      <p class="lead">We are dedicated to fostering academic excellence and holistic development. Our experienced faculty ensures personalized attention and guidance for every student. Join us in shaping a brighter future through education.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">More Info</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
