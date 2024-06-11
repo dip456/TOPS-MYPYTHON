@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card {
+            margin: 20px;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .dashboard-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 60px;
+            background-color: #343a40;
+            color: white;
+            width: 200px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #575d63;
+        }
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% if messages %}
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-dismissible fade show {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'warning' %}alert-warning{% elif message.tags == 'success' %}alert-success{% endif %}"
+            role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="sidebar">
+        <a href="{% url 'dashboard_page' %}">Dashboard</a>
+        <a href="{% url 'show_students' %}">Show All Students</a>
+        <a href="{% url 'show_teachers' %}">Show All Teachers</a>
+        <a href="{% url 'show_books'%}">Show All Books</a>
+    </div>
+
+    <div class="container main-content">
+        <a href="" class="btn btn-danger logout-button">Logout</a>
+        <h1 class="text-center my-4">School Dashboard</h1>
+        <div class="dashboard-row">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Total Students</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ students }}</h5>
+                    <a href="{% url 'add_student' %}" class="btn btn-light">Add Student</a>
+                </div>
+            </div>
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Total Teachers</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ teachers }}</h5>
+                    <a href="{% url 'add_teacher' %}" class="btn btn-light">Add Teacher</a>
+                </div>
+            </div>
+            <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">Total Books</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ books }}</h5>
+                    <a href="{% url 'add_book' %}" class="btn btn-light">Add Book</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
