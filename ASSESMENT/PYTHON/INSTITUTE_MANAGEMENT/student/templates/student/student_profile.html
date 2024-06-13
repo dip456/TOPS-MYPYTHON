@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        /* Basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .tabs {
+            margin-top: 20px;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="profile-img" src="{% static 'images/img7.avif' %}" alt="Image Not Found">
+        <h2>Student Name: Dipak Chaudhari</h2>
+        <p>Class: 10th Grade</p>
+        <p>Course: Mathematics</p>
+
+        <div class="tabs">
+            <button class="tab-btn" onclick="openTab(event, 'details')">Details</button>
+            <button class="tab-btn" onclick="openTab(event, 'grades')">Grades</button>
+            <button class="tab-btn" onclick="openTab(event, 'attendance')">Attendance</button>
+        </div>
+
+        <div id="details" class="tab active">
+            <h3>Student Details</h3>
+            <p>Date of Birth: January 1, 2000</p>
+            <p>Address: 123 Main Street, Cityville</p>
+            <p>Email: deep.doe@example.com</p>
+        </div>
+
+        <div id="grades" class="tab">
+            <h3>Grades</h3>
+            <p>Mathematics: A</p>
+            <p>Science: B</p>
+            <p>History: A</p>
+        </div>
+
+        <div id="attendance" class="tab">
+            <h3>Attendance</h3>
+            <p>Mathematics: 90%</p>
+            <p>Science: 95%</p>
+            <p>History: 92%</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tabs and remove active class from tab buttons
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the selected tab and add active class to tab button
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
