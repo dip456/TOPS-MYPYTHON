@@ -1,112 +1,94 @@
 #include <iostream>
-#include <limits>
-
+#include <math.h>
 using namespace std;
 
-// Function
-void displayMenu();
-int getChoice();
-double getNumber(string prompt);
-double add(double a, double b);
-double subtract(double a, double b);
-double multiply(double a, double b);
-double divide(double a, double b);
+class Calculator
+{
+float a, b;
+public:
 
-int main() {
-    int choice;
-    double num1, num2, result;
 
-    while (true) {
-        displayMenu();
-        choice = getChoice();
+	void result() 
+	{
+		cout << "Enter First Number: "; 
+		cin >> a;
+		cout << "Enter Second Number: "; 
+		cin >> b;
+	}
 
-        if (choice == 5) {
-            cout << "Exiting the calculator. Goodbye!" << endl;
-            break;
-        }
+	float add() 
+	{
+		return a + b;
+	}
 
-        num1 = getNumber("Enter first number: ");
-        num2 = getNumber("Enter second number: ");
+	float sub() 
+	{
+		return a - b;
+	}
 
-        switch (choice) {
-            case 1:
-                result = add(num1, num2);
-                cout << "Result: " << result << endl;
-                break;
-            case 2:
-                result = subtract(num1, num2);
-                cout << "Result: " << result << endl;
-                break;
-            case 3:
-                result = multiply(num1, num2);
-                cout << "Result: " << result << endl;
-                break;
-            case 4:
-                result = divide(num1, num2);
-                if (num2 != 0) {
-                    cout << "Result: " << result << endl;
-                } else {
-                    cout << "Error! Division by zero." << endl;
-                }
-                break;
-            default:
-                cout << "Invalid choice. Please select a valid option from the menu." << endl;
-                break;
-        }
-    }
+	float mul() 
+	{
+		return a * b;
+	}
 
-    return 0;
-}
+	float div() 
+	{
+		if (b == 0) 
+		{
+			cout << "Division By Zero" << 
+					endl;
+			return INFINITY;
+		}
+		else
+		{
+			return a / b;
+		}
+	}
+};
 
-void displayMenu() {
-    cout << "\nMenu:" << endl;
-    cout << "1. Add" << endl;
-    cout << "2. Subtract" << endl;
-    cout << "3. Multiply" << endl;
-    cout << "4. Divide" << endl;
-    cout << "5. Exit" << endl;
-}
+int main() 
+{
+	int ch;
+	Calculator c1; 
+	cout << "this is your calculatore"<<endl;
+         cout<<"your choice"<<endl;
+         cout<<"1.sum"<<endl;
+         cout<<"2.sub"<<endl;
+         cout<<"3.mul"<<endl;
+         cout<<"4.div";
+		
+	do
+	{
+		cout << "\nEnter Choice: ";
+		cin >> ch;
+		switch (ch)
+		{
+		case 1:
+			c1.result();	 
+			cout << "Result: " << 
+		    c1.add() << endl; 
+			break;
 
-int getChoice() {
-    int choice;
-    cout << "Enter your choice (1-5): ";
-    cin >> choice;
-    if (cin.fail() || choice < 1 || choice > 5) {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        return -1;  // Invalid choice
-    }
-    return choice;
-}
+		case 2:
+			c1.result();
+			cout << "Result: " << 
+			c1.sub() << endl;
+			break;
 
-double getNumber(string prompt) {
-    double number;
-    cout << prompt;
-    cin >> number;
-    while (cin.fail()) {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Invalid input. Please enter a valid number: ";
-        cin >> number;
-    }
-    return number;
-}
+		case 3:
+			c1.result();
+			cout << "Result: " << 
+			c1.mul() << endl; 
+			break;
 
-double add(double a, double b) {
-    return a + b;
-}
-
-double subtract(double a, double b) {
-    return a - b;
-}
-
-double multiply(double a, double b) {
-    return a * b;
-}
-
-double divide(double a, double b) {
-    if (b == 0) {
-        return 0;  
-    }
-    return a / b;
+		case 4:
+			c1.result();
+			cout << "Result: " << 
+			c1.div() << endl; 
+			break;
+		}
+		
+	} while (ch >= 1 && ch <= 4);
+	
+	return 0;
 }
