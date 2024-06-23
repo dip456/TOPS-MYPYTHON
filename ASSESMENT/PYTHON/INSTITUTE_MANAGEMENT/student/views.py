@@ -55,7 +55,7 @@ def forgot_password_view(request):
         get_student.password = new_password_
         get_student.save() 
 
-        response = redirect('student_login_view')  # Redirect to login or another appropriate page
+        response = redirect('student_login_view')  
         response.set_cookie('student_id', get_student.student_id)
         response.set_cookie('password', get_student.password)
 
