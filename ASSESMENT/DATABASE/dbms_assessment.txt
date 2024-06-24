@@ -8,10 +8,31 @@ insert into city values(1,'Berlin',52.520008,13.404954,1),
 (5,'los Angeles',34.052235,-118.243683,4),
 (6,'Warsaw',52.237049,21.017532,5);
 
++----+-------------+-----------+-------------+------------+
+| id | city_name   | lat       | long        | country_id |
++----+-------------+-----------+-------------+------------+
+|  1 | Berlin      | 52.520008 |   13.404954 |          1 |
+|  2 | Belgrade    | 44.787197 |   20.457273 |          2 |
+|  3 | Zagreb      | 45.815399 |   15.966568 |          3 |
+|  4 | Ney York    |  40.73061 |  -73.935242 |          4 |
+|  5 | los Angeles | 34.052235 | -118.243683 |          4 |
+|  6 | Warsaw      | 52.237049 |   21.017532 |          5 |
++----+-------------+-----------+-------------+------------+
+
 Customer table:
 CREATE TABLE customer (id INT PRIMARY KEY,customer_name VARCHAR(255),city_id INT,customer_address VARCHAR(255),next_call_date DATE,
 ts_inserted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (city_id) REFERENCES city(id));
+
++----+---------------+---------+-------------------+----------------+---------------------+
+| id | customer_name | city_id | customer_address  | next_call_date | ts_inserted         |
++----+---------------+---------+-------------------+----------------+---------------------+
+|  1 | jewelry store |       4 | Long street 120   | 2020-01-21     | 2024-03-28 16:53:12 |
+|  2 | bakery        |       1 | kurfurstandamm 25 | 2020-02-21     | 2024-03-28 16:53:56 |
+|  3 | Cafe          |       1 | tauinziebtstabe44 | 2020-02-21     | 2024-03-28 16:54:32 |
+|  4 | Resturant     |       3 | Ulica lipa        | 2020-01-21     | 2024-03-28 16:54:40 |
+|  5 | jewelry store |       4 | Long street 120   | 2020-01-21     | 2020-01-09 14:01:20 |
++----+---------------+---------+-------------------+----------------+---------------------+
 
 
 Country table :
@@ -24,6 +45,20 @@ s (2,'Serbia','Serbia','SRB'),
 (6,'Espana','spain','ESP'),
 (7,'Rossiya','Russiya','RUS');
 
++------+----------------------+--------------+--------------+
+| id   | country_name         | country_eng  | country_code |
++------+----------------------+--------------+--------------+
+|    1 | Deutschland          | Germany      | DEU          |
+|    2 | Serbia               | Serbia       | SRB          |
+|    3 | Hrvatska             | Croatia      | HRV          |
+|    4 | united State America | United state | USA          |
+|    5 | polska               | Poland       | POL          |
+|    6 | Espana               | spain        | ESP          |
+|    7 | Rossiya              | Russiya      | RUS          |
++------+----------------------+--------------+--------------+
+
+
+
 
 Task : 1 (join multiple tables using left join)
 SELECT customer.id AS customer_id,customer.customer_name,city.id AS city_id,city.city_name,country.id AS country_id,country.country_name
@@ -31,11 +66,36 @@ SELECT customer.id AS customer_id,customer.customer_name,city.id AS city_id,city
     -> LEFT JOIN city ON customer.city_id = city.id
     -> LEFT JOIN country ON city.country_id = country.id;
 
++-------------+---------------+---------+-----------+------------+----------------------+
+| customer_id | customer_name | city_id | city_name | country_id | country_name         |
++-------------+---------------+---------+-----------+------------+----------------------+
+|           1 | jewelry store |       4 | Ney York  |          4 | united State America |
+|           2 | bakery        |       1 | Berlin    |          1 | Deutschland          |
+|           3 | Cafe          |       1 | Berlin    |          1 | Deutschland          |
+|           4 | Resturant     |       3 | Zagreb    |          3 | Hrvatska             |
+|           5 | jewelry store |       4 | Ney York  |          4 | united State America |
++-------------+---------------+---------+-----------+------------+----------------------+
+
 List all Countries and customers related to these countries.
 SELECTcountry.id AS country_id,country.country_name,customer.id AS customer_id,customer.customer_name
     -> FROM country
     -> LEFT JOIN city ON country.id = city.country_id
     -> LEFT JOIN customer ON city.id = customer.city_id;
+
++------------+----------------------+-------------+---------------+
+| country_id | country_name         | customer_id | customer_name |
++------------+----------------------+-------------+---------------+
+|          1 | Deutschland          |           3 | Cafe          |
+|          1 | Deutschland          |           2 | bakery        |
+|          2 | Serbia               |        NULL | NULL          |
+|          3 | Hrvatska             |           4 | Resturant     |
+|          4 | united State America |           5 | jewelry store |
+|          4 | united State America |           1 | jewelry store |
+|          4 | united State America |        NULL | NULL          |
+|          5 | polska               |        NULL | NULL          |
+|          6 | Espana               |        NULL | NULL          |
+|          7 | Rossiya              |        NULL | NULL          |
++------------+----------------------+-------------+---------------+
 
 For each country displaying its name in English, the name of the city customer is located in as well as the name of the customer.
 SELECT
@@ -43,6 +103,16 @@ SELECT
     -> FROM customer
     -> LEFT JOIN city ON customer.city_id = city.id
     -> LEFT JOIN country ON city.country_id = country.id;
+
++----------------------+-----------+---------------+
+| country_name         | city_name | customer_name |
++----------------------+-----------+---------------+
+| united State America | Ney York  | jewelry store |
+| Deutschland          | Berlin    | bakery        |
+| Deutschland          | Berlin    | Cafe          |
+| Hrvatska             | Zagreb    | Resturant     |
+| united State America | Ney York  | jewelry store |
++----------------------+-----------+---------------+
 
 
 Task : 2 (join multiple tables using both left and inner join)
@@ -52,8 +122,18 @@ SELECT
     -> LEFT JOIN city ON country.id = city.country_id
     -> INNER JOIN customer ON city.id = customer.city_id;
 
++----------------------+-----------+---------------+
+| country_name         | city_name | customer_name |
++----------------------+-----------+---------------+
+| united State America | Ney York  | jewelry store |
+| Deutschland          | Berlin    | bakery        |
+| Deutschland          | Berlin    | Cafe          |
+| Hrvatska             | Zagreb    | Resturant     |
+| united State America | Ney York  | jewelry store |
++----------------------+-----------+---------------+
 
-    Return the list of all countries that have pairs(exclude countries which are not referenced by any city). For such pairs return all customers.
+ Return the list of all countries that have pairs(exclude countries which are not referenced by any city). For such pairs return all customers.
+
 SELECT 
     country.country_name AS country_name,
     city.city_name,
@@ -65,11 +145,36 @@ INNER JOIN
 INNER JOIN 
     customer ON city.id = customer.city_id;
 
++----------------------+-----------+---------------+
+| country_name         | city_name | customer_name |
++----------------------+-----------+---------------+
+| united State America | Ney York  | jewelry store |
+| Deutschland          | Berlin    | bakery        |
+| Deutschland          | Berlin    | Cafe          |
+| Hrvatska             | Zagreb    | Resturant     |
+| united State America | Ney York  | jewelry store |
++----------------------+-----------+---------------+
+
 
 Return even pairs of not having a single customer
 SELECT country.country_name AS country_name,city.city_name,customer.customer_name
     -> FROM country
     -> LEFT JOIN city ON country.id = city.country_id
     -> LEFT JOIN customer ON city.id = customer.city_id;
+
++----------------------+-------------+---------------+
+| country_name         | city_name   | customer_name |
++----------------------+-------------+---------------+
+| Deutschland          | Berlin      | Cafe          |
+| Deutschland          | Berlin      | bakery        |
+| Serbia               | Belgrade    | NULL          |
+| Hrvatska             | Zagreb      | Resturant     |
+| united State America | Ney York    | jewelry store |
+| united State America | Ney York    | jewelry store |
+| united State America | los Angeles | NULL          |
+| polska               | Warsaw      | NULL          |
+| Espana               | NULL        | NULL          |
+| Rossiya              | NULL        | NULL          |
++----------------------+-------------+---------------+
 
 

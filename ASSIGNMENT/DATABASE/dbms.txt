@@ -1,38 +1,42 @@
 MODULE: 5 (Database)
 
-1.	What do you understand By Database.
+1.What do you understand By Database.
 A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
-
 Data within the most common types of databases in operation today is typically modeled in rows and columns in a series of tables to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (SQL) for writing and querying data.
 
 
-2.	What is Normalization?
+2.What is Normalization?
  Normalization is the process to eliminate data redundancy and enhance data integrity in the table. Normalization also helps to organize the data in the database. It is a multi-step process that sets the data into tabular form and removes the duplicated data from the relational tables.
 Normalization organizes the columns and tables of a database to ensure that database integrity constraints properly execute their dependencies. It is a systematic technique of decomposing tables to eliminate data redundancy (repetition) and undesirable characteristics like Insertion, Update, and Deletion anomalies.
-
 
 
 1st Normal Form (1NF)
 A table is referred to as being in its First Normal Form if atomicity of the table is 1.
 Here, atomicity states that a single cell cannot hold multiple values. It must hold only a single-valued attribute.
 The First normal form disallows the multi-valued attribute, composite attribute, and their combinations.
+
 Second Normal Form (2NF)
 The first condition for the table to be in Second Normal Form is that the table has to be in First Normal Form. The table should not possess partial dependency. The partial dependency here means the proper subset of the candidate key should give a non-prime attribute.
+
 Third Normal Form (3NF)
 The first condition for the table to be in Third Normal Form is that the table should be in the Second Normal Form.
 The second condition is that there should be no transitive dependency for non-prime attributes, which indicates that non-prime attributes (which are not a part of the candidate key) should not depend on other non-prime attributes in a table. Therefore, a transitive dependency is a functional dependency in which A → C (A determines C) indirectly, because of A → B and B → C (where it is not the case that B → A).
 The third Normal Form ensures the reduction of data duplication. It is also used to achieve data integrity.
 
 
-3.	What is Difference between DBMS and RDBMS? 
+3.What is Difference between DBMS and RDBMS? 
+
 What is DBMS?
+
 A database management system (DBMS) allows users to store, retrieve, and manipulate data in a database. A DBMS typically provides tools that enable users to create, update, and delete data in the database. In addition, a DBMS may provide tools for managing the database, such as creating and deleting tables and indexes and managing user access to the database. It also include, data integrity, and data recovery features.
 Types of DBMS
+
 There are four main types of DBMS: relational, object-oriented, graph-based, and NoSQL. 
 Relational DBMSs are the most common and use a tabular structure to store data. 
 Object-oriented DBMSs use an object-oriented model to store data, and Graph-based DBMSs use a graph structure to store data.
  DBMSs are a newer DBMS type that uses a non-tabular structure to store data.
 There are some other types of DBMS also considerable one, and there are,
+
 Hierarchical DBMS
 Network DBMS
 Cloud DBMS
@@ -41,6 +45,7 @@ Distributed DBMS
 Multivalue DBMS
 XML DBMS
 Benefits of DBMS
+
 A database management system (DBMS) is a software package designed to define, manipulate, and control a database. It is a system that enables the creation and maintenance of a central database. So, there are plenty of benefits of this DBMS, and the following are the considerable ones,
 Data Integrity: A DBMS helps maintain data integrity due to its ability to enforce data integrity constraints. This integrity ensures that data is consistent, accurate, and reliable over time.
 Data Security: A DBMS ensures data security through access control mechanisms like user profiles, passwords, and other authentication methods. This security ensures that only authorized users have access to the required data.
@@ -61,7 +66,7 @@ Scalability: RDBMS is highly scalable and can easily be expanded to accommodate 
 Flexibility: RDBMSs offer a high degree of flexibility, allowing users to add, delete, and update data easily. 
 
 
-4.	What is MF Cod Rule of RDBMS Systems? 
+4.What is MF Cod Rule of RDBMS Systems? 
 
 It seems like there might be a typo or misunderstanding in your question. As of my last update in January 2022, there's no widely recognized term or concept called "MF Cod Rule" in the context of RDBMS (Relational Database Management Systems).
 However, there are various principles and rules associated with relational databases, such as those defined by Codd's 12 rules or the principles of normalization.
@@ -73,7 +78,7 @@ If you meant something else by "MF Cod Rule" or if you have any other questions 
 
 
 
-5.	What do you understand By Data Redundancy? 
+5.What do you understand By Data Redundancy? 
 
 Data redundancy refers to the practice of keeping data in two or more places within a database or data storage system. Data redundancy ensures an organization can provide continued operations or services in the event something happens to its data -- for example, in the case of data corruption or . The concept applies to areas such as databases, computer memory and file storage systems.
 Data redundancy can occur within an organization intentionally or accidentally. If done intentionally, the same data is kept in different locations with the organization making a conscious effort to protect it and ensure its consistency. This data is often used for backups or disaster recovery.
@@ -89,14 +94,14 @@ If carried out by accident, duplicate data may cause data inconsistencies. Even 
 
 
 
-6.	What is DDL Interpreter?
+6.What is DDL Interpreter?
 
 In the context of databases, DDL stands for Data Definition Language. It's a subset of SQL (Structured Query Language) used for defining and modifying the structure of a database schema, such as creating, altering, or dropping tables, indexes, and other database objects.
 A DDL interpreter is a component of a database management system (DBMS) that processes DDL statements. It's responsible for executing commands that define or modify the structure of the database schema. This includes tasks such as creating tables, defining constraints, altering column definitions, and dropping objects from the database.
 The DDL interpreter translates the DDL statements issued by users or applications into actions that manipulate the underlying database schema. It ensures that the requested changes adhere to the syntax and semantics of the database system, and it performs the necessary operations to implement those changes in the database.
 
 
-7.	What is DML Compiler in SQL? 
+7.What is DML Compiler in SQL? 
 
 In SQL (Structured Query Language), DML stands for Data Manipulation Language. It's a subset of SQL used for querying and modifying data in a database. Common DML statements include SELECT (for querying data), INSERT (for adding new rows), UPDATE (for modifying existing rows), and DELETE (for removing rows).
 A DML compiler, sometimes referred to as the query compiler, is a component of a database management system (DBMS) responsible for translating DML statements written in SQL into low-level instructions or an execution plan that the database engine can understand and execute efficiently.
@@ -104,14 +109,16 @@ A DML compiler, sometimes referred to as the query compiler, is a component of a
 
 
 
-8.	What is SQL Key Constraints writing an Example of SQL Key Constraints
+8.What is SQL Key Constraints writing an Example of SQL Key Constraints
 In SQL, key constraints are rules applied to columns in a database table that enforce uniqueness and integrity.
  There are primarily three types of key constraints:
 Primary Key Constraint: A primary key constraint uniquely identifies each record in a table and ensures that the column(s) it's applied to contain unique and non-null values.
 Unique Constraint: A unique constraint ensures that all values in a column or a group of columns are unique, but unlike the primary key constraint, it allows null values.
 Foreign Key Constraint: A foreign key constraint establishes a relationship between two tables by enforcing referential integrity. It ensures that values in a column (or a set of columns) in one table match values in another table's column (usually the primary key column).
 Here's an example of each type of key constraint:
+
 Primary Key Constraint Example:
+
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     FirstName VARCHAR(50),
@@ -119,6 +126,7 @@ CREATE TABLE Employees (
     DepartmentID INT
 );
 Unique Constraint Example:
+
 CREATE TABLE Products (
     ProductID INT UNIQUE,
     ProductName VARCHAR(100),
@@ -126,12 +134,15 @@ CREATE TABLE Products (
 );
 
 Foreign Key Constraint Example:
+
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     ProductID INT,
     Quantity INT,
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
+
+
 
 9.	What is save Point? How to create a save Point write a Query? 
 
@@ -168,6 +179,13 @@ insert into student values(2,'Shuhani','electric and com');
 insert into student values(3,'Kriti','electric and com');
 
 select * from student;
++---------+---------+------------------+
+| Roll_no | Name    | Branch           |
++---------+---------+------------------+
+|       1 | Jay     | Computer Science |
+|       2 | Shuhani | electric and com |
+|       3 | Kriti   | electric and com |
++---------+---------+------------------+
 
 
 
@@ -176,6 +194,16 @@ Exam table :
 create table Exam(Roll_no int,S_code varchar(5),Marks int,P_code varchar(5));
 
 alter table Exam add foreign key(Roll_no) REFERENCES student(Roll_no);
++---------+--------+-------+--------+
+| Roll_no | S_code | Marks | P_code |
++---------+--------+-------+--------+
+|       1 | CS11   |    50 | CS     |
+|       1 | CS12   |    60 | CS     |
+|       2 | EC101  |    66 | EC     |
+|       2 | EC102  |    70 | EC     |
+|       3 | EC101  |    45 | EC     |
+|       3 | EC102  |    50 | EC     |
++---------+--------+-------+--------+
 
 2 . Create table given below: Employee and IncentiveTable
 
@@ -192,34 +220,112 @@ insert into Employee_ values (6, 'Philip', 'Mathew',750000, '2013-01-01 12:00:00
 insert into Employee_ values (7, 'TestName1', '123',650000, '2013-01-01 12:00:00', 'Services');
 insert into Employee_ values (8, 'TestName2', 'Lname%',600000, '2013-02-01 12:00:00', 'Insurance');
 
++-------------+------------+-----------+---------+---------------------+------------+
+| Employee_id | Frist_name | Last_name | Salary  | Joining_date        | Department |
++-------------+------------+-----------+---------+---------------------+------------+
+|           1 | John       | Abraham   | 1000000 | 2013-01-01 12:00:00 | Banking    |
+|           2 | Michael    | Clarke    |  800000 | 2013-01-01 12:00:00 | Insurance  |
+|           3 | Roy        | Thomas    |  700000 | 2013-02-01 12:00:00 | Banking    |
+|           4 | Tom        | Jose      |  600000 | 2013-02-01 12:00:00 | Insurance  |
+|           5 | Jerry      | Pinto     |  650000 | 2013-02-01 12:00:00 | Insurance  |
+|           6 | Philip     | Mathew    |  750000 | 2013-01-01 12:00:00 | Services   |
+|           7 | TestName1  | 123       |  650000 | 2013-01-01 12:00:00 | Services   |
+|           8 | TestName2  | Lname%    |  600000 | 2013-02-01 12:00:00 | Insurance  |
++-------------+------------+-----------+---------+---------------------+------------+
+
 
 IncentiveTable
-CREATE TABLE incentive_f (Employee_ref_id INT PRIMARY KEY,Employee_id INT,Incentive_date DATE,Incentive_amount int, FOREIGN KEY (Employee_id) REFERENCES Employee_(Employee_id));
+
+CREATE TABLE incentive_final (Employee_ref_id INT PRIMARY KEY,Employee_id INT,Incentive_date DATE,Incentive_amount int, FOREIGN KEY (Employee_id) REFERENCES Employee_(Employee_id));
 
 ………………………………Insert data in Incentive table………………………………….
-insert into Incentive_f values(1,'2013-02-01',5000),(2,'2013-02-01',3000),
+insert into Incentive_final values(1,'2013-02-01',5000),(2,'2013-02-01',3000),
 (3,'2013-02-01',4000),(1,'2013-01-01',4500),(2,'2013-01-01',3500);
 
-select * from Incentive_f;
+select * from Incentive_final;
++-----------------+-------------+----------------+------------------+
+| Employee_ref_id | Employee_id | Incentive_date | Incentive_amount |
++-----------------+-------------+----------------+------------------+
+|               1 |        NULL | 2013-02-01     |             5000 |
+|               2 |        NULL | 2013-02-01     |             3000 |
+|               3 |        NULL | 2013-02-01     |             4000 |
+|               1 |        NULL | 2013-01-01     |             4500 |
+|               2 |        NULL | 2013-01-01     |             3500 |
++-----------------+-------------+----------------+------------------+
+
 
 1 . Get First_Name from employee table using Tom name    “Employee Name”.
 
-      select Frist_name from Employee_  where Frist_name = 'Tom';
+select Frist_name from Employee_  where Frist_name = 'Tom';
++------------+
+| Frist_name |
++------------+
+| Tom        |
++------------+
 
 2.Get FIRST_NAME, Joining Date, and Salary from employee table.
 select Frist_name,Joining_date,Salary from employee_;
 
++------------+---------------------+---------+
+| Frist_name | Joining_date        | Salary  |
++------------+---------------------+---------+
+| John       | 2013-01-01 12:00:00 | 1000000 |
+| Michael    | 2013-01-01 12:00:00 |  800000 |
+| Roy        | 2013-02-01 12:00:00 |  700000 |
+| Tom        | 2013-02-01 12:00:00 |  600000 |
+| Jerry      | 2013-02-01 12:00:00 |  650000 |
+| Philip     | 2013-01-01 12:00:00 |  750000 |
+| TestName1  | 2013-01-01 12:00:00 |  650000 |
+| TestName2  | 2013-02-01 12:00:00 |  600000 |
++------------+---------------------+---------+
+
 3. Get all employee details from the employee table order by First_Name Ascending and Salary descending?
 
 select * from Employee_ order by Frist_name ASC;
++-------------+------------+-----------+---------+---------------------+------------+
+| Employee_id | Frist_name | Last_name | Salary  | Joining_date        | Department |
++-------------+------------+-----------+---------+---------------------+------------+
+|           5 | Jerry      | Pinto     |  650000 | 2013-02-01 12:00:00 | Insurance  |
+|           1 | John       | Abraham   | 1000000 | 2013-01-01 12:00:00 | Banking    |
+|           2 | Michael    | Clarke    |  800000 | 2013-01-01 12:00:00 | Insurance  |
+|           6 | Philip     | Mathew    |  750000 | 2013-01-01 12:00:00 | Services   |
+|           3 | Roy        | Thomas    |  700000 | 2013-02-01 12:00:00 | Banking    |
+|           7 | TestName1  | 123       |  650000 | 2013-01-01 12:00:00 | Services   |
+|           8 | TestName2  | Lname%    |  600000 | 2013-02-01 12:00:00 | Insurance  |
+|           4 | Tom        | Jose      |  600000 | 2013-02-01 12:00:00 | Insurance  |
++-------------+------------+-----------+---------+---------------------+------------+
 
  4. select * from employee_ order by Salary desc;
-
++-------------+------------+-----------+---------+---------------------+------------+
+| Employee_id | Frist_name | Last_name | Salary  | Joining_date        | Department |
++-------------+------------+-----------+---------+---------------------+------------+
+|           1 | John       | Abraham   | 1000000 | 2013-01-01 12:00:00 | Banking    |
+|           2 | Michael    | Clarke    |  800000 | 2013-01-01 12:00:00 | Insurance  |
+|           6 | Philip     | Mathew    |  750000 | 2013-01-01 12:00:00 | Services   |
+|           3 | Roy        | Thomas    |  700000 | 2013-02-01 12:00:00 | Banking    |
+|           5 | Jerry      | Pinto     |  650000 | 2013-02-01 12:00:00 | Insurance  |
+|           7 | TestName1  | 123       |  650000 | 2013-01-01 12:00:00 | Services   |
+|           4 | Tom        | Jose      |  600000 | 2013-02-01 12:00:00 | Insurance  |
+|           8 | TestName2  | Lname%    |  600000 | 2013-02-01 12:00:00 | Insurance  |
++-------------+------------+-----------+---------+---------------------+------------+
  5.Get employee details from employee table whose first name contains ‘J’.
 select * from employee_ where Frist_name LIKE '%J%';
++-------------+------------+-----------+---------+---------------------+------------+
+| Employee_id | Frist_name | Last_name | Salary  | Joining_date        | Department |
++-------------+------------+-----------+---------+---------------------+------------+
+|           1 | John       | Abraham   | 1000000 | 2013-01-01 12:00:00 | Banking    |
+|           5 | Jerry      | Pinto     |  650000 | 2013-02-01 12:00:00 | Insurance  |
++-------------+------------+-----------+---------+---------------------+------------+
 
 6. Get department wise maximum salary from employee table order by salary ascending?
 select Department,max(Salary) as max_salary from employee_ group by Department order by max_salary asc;
++------------+------------+
+| Department | max_salary |
++------------+------------+
+| Services   |     750000 |
+| Insurance  |     800000 |
+| Banking    |    1000000 |
++------------+------------+
 
 7.Create After Insert trigger on Employee table which insert records in viewtable
 DELIMITER //
@@ -228,6 +334,16 @@ mysql> Create Trigger T1
     -> BEGIN
     -> INSERT INTO employee_detail VALUES (id,message());
     -> END//
+
+
+mysql> DELIMITER //
+mysql> Create Trigger T11
+    -> AFTER INSERT ON employee_ FOR EACH ROW
+    -> BEGIN
+    -> INSERT INTO employee_detail VALUES (id,message());
+    -> END//
+Query OK, 0 rows affected (0.01 sec)
+
 
 Create table given below: Salesperson and Customer
 Salesperson : 
@@ -242,6 +358,15 @@ insert into salesperson1 values(1001,'Peel','London',.12),
 (1003,'Axelrod','New York',.1);
 
 select * from salesperson1;
++------+---------+-----------+------+
+| Sno  | SNAME   | CITY      | COMM |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Serres  | San Jose  | 0.13 |
+| 1003 | Axelrod | New York  |  0.1 |
+| 1004 | Motika  | London    | 0.11 |
+| 1007 | Rafkin  | Barcelona | 0.15 |
++------+---------+-----------+------+
 
 Customer :
 Create table CUSTOMER ( CNM int primary key, CNAME varchar(50), CITY varchar(50),RATING int,Sno int, foreign key (Sno) REFERENCES SALESPERSON1(Sno));
@@ -250,25 +375,62 @@ Create table CUSTOMER ( CNM int primary key, CNAME varchar(50), CITY varchar(50)
 Insert into CUSTOMER (CNM, CNAME, CITY, RATING, Sno)VALUES
 (201, 'Hoffman', 'London', 100, 1001),(202, 'Giovanne', 'Roe', 200, 1003),(203, 'Liu', 'San Jose', 300, 1002),(204, 'Grass', 'Barcelona', 100, 1002),(206, 'Clemens', 'London', 300, 1007),(207, 'Pereira', 'Roe', 100, 1004);
 
++-----+----------+-----------+--------+------+
+| CNM | CNAME    | CITY      | RATING | Sno  |
++-----+----------+-----------+--------+------+
+| 201 | Hoffman  | London    |    100 | 1001 |
+| 202 | Giovanne | Roe       |    200 | 1003 |
+| 203 | Liu      | San Jose  |    300 | 1002 |
+| 204 | Grass    | Barcelona |    100 | 1002 |
+| 206 | Clemens  | London    |    300 | 1007 |
+| 207 | Pereira  | Roe       |    100 | 1004 |
++-----+----------+-----------+--------+------+
 
 13.All orders for more than $1000.
 select * from CUSTOMER where RATING > 1000;
+
+ans.mysql> select * from CUSTOMER where RATING > 1000;
+Empty set (0.00 sec)
 
 
 14.Names and cities of all salespeople in London with commission above 0.12
 select SNAME, CITY from SALESPERSON1 where CITY = 'London' AND COMM > 0.12;
 
+ans.mysql> select SNAME, CITY from SALESPERSON1 where CITY = 'London' AND COMM > 0.12;
+Empty set (0.00 sec)
+
 
  15.All salespeople either in Barcelona or in London 
-SELECT *FROM SALESPERSON1 WHERE CITY IN ('Barcelona', 'London')
+SELECT *FROM SALESPERSON1 WHERE CITY IN ('Barcelona', 'London');
++------+--------+-----------+------+
+| Sno  | SNAME  | CITY      | COMM |
++------+--------+-----------+------+
+| 1001 | Peel   | London    | 0.12 |
+| 1004 | Motika | London    | 0.11 |
+| 1007 | Rafkin | Barcelona | 0.15 |
++------+--------+-----------+------+
 
 
 16. All salespeople with commission between 0.10 and 0.12. (Boundary values should be excluded).
 SELECT * FROM SALESPERSON1 WHERE COMM > 0.10 AND COMM < 0.12;
++------+---------+----------+------+
+| Sno  | SNAME   | CITY     | COMM |
++------+---------+----------+------+
+| 1001 | Peel    | London   | 0.12 |
+| 1003 | Axelrod | New York |  0.1 |
+| 1004 | Motika  | London   | 0.11 |
++------+---------+----------+------+
 
 
 17. All customers excluding those with rating <= 100 unless they are located inRome.
 SELECT *FROM CUSTOMER WHERE RATING > 100 OR (RATING <= 100 AND CITY = 'Rome');
++-----+----------+----------+--------+------+
+| CNM | CNAME    | CITY     | RATING | Sno  |
++-----+----------+----------+--------+------+
+| 202 | Giovanne | Roe      |    200 | 1003 |
+| 203 | Liu      | San Jose |    300 | 1002 |
+| 206 | Clemens  | London   |    300 | 1007 |
++-----+----------+----------+--------+------+
 
 
 18. Write a SQL statement that displays all the information about all salespeople.
@@ -276,6 +438,7 @@ SELECT *FROM CUSTOMER WHERE RATING > 100 OR (RATING <= 100 AND CITY = 'Rome');
 
 
 Create table Salespeople (salesman_id int primary key,name varchar(255),city varchar(255),commission float);
+
 Insert into Salespeople (salesman_id, name, city, commission)values
     (5001, 'James Hoog', 'New York', 0.15),
     (5002, 'Nail Knite', 'Paris', 0.13),
@@ -283,6 +446,17 @@ Insert into Salespeople (salesman_id, name, city, commission)values
     (5006, 'Mc Lyon', 'Paris', 0.14),
     (5007, 'Paul Adam', 'Rome', 0.13),
     (5003, 'Lauson Hen', 'San Jose', 0.12);
+
++-------------+------------+----------+------------+
+| salesman_id | name       | city     | commission |
++-------------+------------+----------+------------+
+|        5001 | James Hoog | New York |       0.15 |
+|        5002 | Nail Knite | Paris    |       0.13 |
+|        5003 | Lauson Hen | San Jose |       0.12 |
+|        5005 | Pit Alex   | London   |       0.11 |
+|        5006 | Mc Lyon    | Paris    |       0.14 |
+|        5007 | Paul Adam  | Rome     |       0.13 |
++-------------+------------+----------+------------+
 
 
 19. From the following table, write a SQL query to find orders that are delivered by a salesperson with ID. 5001. Return ord_no, ord_date, purch_amt.
@@ -301,28 +475,120 @@ INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) VALUE
     -> (70011, 75.29, '2012-08-17', 3003, 5007),
     -> (70013, 3045.6, '2012-04-25', 3002, 5001);
 
++--------+-----------+------------+-------------+-------------+
+| ord_no | purch_amt | ord_date   | customer_id | salesman_id |
++--------+-----------+------------+-------------+-------------+
+|  70001 |     150.5 | 2012-10-05 |        3005 |        5002 |
+|  70002 |     65.26 | 2012-10-05 |        3002 |        5001 |
+|  70003 |    2480.4 | 2012-10-10 |        3009 |        5003 |
+|  70004 |     110.5 | 2012-08-17 |        3009 |        5003 |
+|  70005 |    2400.6 | 2012-07-27 |        3007 |        5001 |
+|  70007 |     948.5 | 2012-09-10 |        3005 |        5002 |
+|  70008 |      5760 | 2012-09-10 |        3002 |        5001 |
+|  70009 |    270.65 | 2012-09-10 |        3001 |        5005 |
+|  70010 |   1983.43 | 2012-10-10 |        3004 |        5006 |
+|  70011 |     75.29 | 2012-08-17 |        3003 |        5007 |
+|  70012 |    250.45 | 2012-06-27 |        3008 |        5002 |
+|  70013 |    3045.6 | 2012-04-25 |        3002 |        5001 |
++--------+-----------+------------+-------------+-------------+
+
 
 SELECT ord_no, ord_date, purch_amt FROM orders WHERE salesman_id = 5001;
++--------+------------+-----------+
+| ord_no | ord_date   | purch_amt |
++--------+------------+-----------+
+|  70002 | 2012-10-05 |     65.26 |
+|  70005 | 2012-07-27 |    2400.6 |
+|  70008 | 2012-09-10 |      5760 |
+|  70013 | 2012-04-25 |    3045.6 |
++--------+------------+-----------+
 
 
 20. From the following table, write a SQL query to select a range of products whose price is in the range Rs.200 to Rs.600. Begin and end values are included. Return pro_id, pro_name, pro_price, and pro_com.
 
-SELECT PRO_ID, PRO_NAME, PRO_PRICE, PRO_COMFROM item_mast WHERE PRO_PRICE BETWEEN 200.00 AND 600.00;
++--------+------------------+-----------+---------+
+| PRO_ID | PRO_NAME         | PRO_PRICE | PRO_COM |
++--------+------------------+-----------+---------+
+|    101 | Mother Board     |      3200 |      15 |
+|    102 | Key Board        |       450 |      16 |
+|    103 | ZIP drive        |       250 |      14 |
+|    104 | Speaker          |       550 |      16 |
+|    105 | Monitor          |      5000 |      11 |
+|    106 | DVD drive        |       900 |      12 |
+|    107 | CD drive         |       800 |      12 |
+|    108 | Printer          |      2600 |      13 |
+|    109 | Refill cartridge |       350 |      13 |
+|    110 | Mouse            |       250 |      12 |
++--------+------------------+-----------+---------+
+
+SELECT PRO_ID, PRO_NAME, PRO_PRICE, PRO_COM item_mast WHERE PRO_PRICE BETWEEN 200.00 AND 600.00;
+
++--------+------------------+-----------+---------+
+| PRO_ID | PRO_NAME         | PRO_PRICE | PRO_COM |
++--------+------------------+-----------+---------+
+|    102 | Key Board        |       450 |      16 |
+|    103 | ZIP drive        |       250 |      14 |
+|    104 | Speaker          |       550 |      16 |
+|    109 | Refill cartridge |       350 |      13 |
+|    110 | Mouse            |       250 |      12 |
++--------+------------------+-----------+---------+
 
 21.From the following table, write a SQL query to calculate the average price for a manufacturer code of 16. Return avg.
 SELECT AVG(PRO_PRICE) AS avg_price FROM item_mast WHERE PRO_COM =16;
++-----------+
+| avg_price |
++-----------+
+|       500 |
++-----------+
 
 
 22. From the following table, write a SQL query to display the pro_name as 'Item Name' and pro_priceas 'Price in Rs.'
 SELECT PRO_NAME AS 'Item Name', CONCAT('Rs.', PRO_PRICE) AS 'Price in Rs.'FROM item_mast;
-
++------------------+--------------+
+| Item Name        | Price in Rs. |
++------------------+--------------+
+| Mother Board     | Rs.3200      |
+| Key Board        | Rs.450       |
+| ZIP drive        | Rs.250       |
+| Speaker          | Rs.550       |
+| Monitor          | Rs.5000      |
+| DVD drive        | Rs.900       |
+| CD drive         | Rs.800       |
+| Printer          | Rs.2600      |
+| Refill cartridge | Rs.350       |
+| Mouse            | Rs.250       |
++------------------+--------------+
 
 23. From the following table, write a SQL query to find the items whose prices are higher than or equal to $250. Order the result by product price in descending, then product name in ascending. Return pro_name and pro_price.
 SELECT pro_name, pro_price FROM item_mast WHERE pro_price >= 250 ORDER BY pro_price DESC, pro_name ASC;
++------------------+-----------+
+| pro_name         | pro_price |
++------------------+-----------+
+| Monitor          |      5000 |
+| Mother Board     |      3200 |
+| Printer          |      2600 |
+| DVD drive        |       900 |
+| CD drive         |       800 |
+| Speaker          |       550 |
+| Key Board        |       450 |
+| Refill cartridge |       350 |
+| Mouse            |       250 |
+| ZIP drive        |       250 |
++------------------+-----------+
 
 
 24. From the following table, write a SQL query to calculate average price of the items for each company. Return average price and company code.
 SELECT PRO_COM AS company_code, AVG(PRO_PRICE) AS average_price FROM item_mast GROUP BY PRO_COM;
++--------------+---------------+
+| company_code | average_price |
++--------------+---------------+
+|           15 |          3200 |
+|           16 |           500 |
+|           14 |           250 |
+|           11 |          5000 |
+|           12 |           650 |
+|           13 |          1475 |
++--------------+---------------+
 
 
 CREATE TRIGGER employee1 AFTER INSERT ON Employee1 FOR EACH ROW
@@ -330,6 +596,18 @@ BEGIN
     INSERT INTO ViewTable (column1, column2, column3, ...) 
     VALUES (NEW.column1, NEW.column2, NEW.column3, ...);
 END;
+
+DELIMITER //
+
+CREATE TRIGGER employee1_trigger
+AFTER INSERT ON Employee1
+FOR EACH ROW
+BEGIN
+    INSERT INTO ViewTable (column1, column2, column3, ...)
+    VALUES (NEW.column1, NEW.column2, NEW.column3, ...);
+END//
+
+DELIMITER ;
 
 
 
