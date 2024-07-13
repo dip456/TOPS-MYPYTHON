@@ -11,7 +11,6 @@ urlpatterns = [
     path('otp_verify/',genrate_otp_page,name='genrate_otp_page'),
     path('login/',login_page_view,name='login_page_view'),
     path('forgotpass/',forgot_pass_page,name='forgot_pass_page'),    
-
     path('logout/',logout,name='logout'),    
 
  
@@ -25,15 +24,8 @@ urlpatterns = [
     path('cart/pay/<amt>',pay,name="pay"),
     path('cart/<str:product_id>/', add_item_in_cart, name='add_item_in_cart'),
     path('cart/pay/<str:amt>/',pay, name='pay'),
-
     path('cart/order_confirm',order_confirm,name='order_confirm'),
     path('my_orders/',my_orders,name='my_orders'),
-
-
-    
-
-
-
     path('profile-update/', update_personal_info, name='update_personal_info'),
     path('add_address_view/', add_address_view, name='add_address_view'),
 
